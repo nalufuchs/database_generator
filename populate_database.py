@@ -1,7 +1,7 @@
 from faker import Faker
 import random
 import db_connection as db
-import create_database_script as cds
+import create_database as cds
 
 
 fake = Faker()

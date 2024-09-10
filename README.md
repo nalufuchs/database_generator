@@ -24,8 +24,8 @@ Este projeto em Python cria e gerencia um banco de dados relacional utilizando P
 1. Clone o repositório para sua máquina local:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone hhttps://github.com/nalufuchs/database_generator
+   cd database_generator
    ```
 
 2. Crie um ambiente virtual e instale as dependências:
