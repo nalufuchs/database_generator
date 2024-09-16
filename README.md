@@ -1,6 +1,6 @@
 # Database Creation and Analysis Project
 
-This Python project creates and manages a relational database using PostgreSQL. It includes scripts to define the database schema, populate it with fake data, and perform analyses using SQL queries. Everything is coordinated by a single `main.py` file, which must be run to execute the project.
+This Python project creates and manages a relational database using PostgreSQL. It includes scripts to define the database schema, populate it with fake data, and perform analyses using SQL queries. Everything is coordinated by three main files, such as:  `database_setup.py`, `data_population.py` and `etl_process`, which must be run in this order to execute the project.
 
 ## Project Structure
 
