@@ -1,5 +1,3 @@
-Aqui está o README adaptado conforme solicitado:
-
 # Database Creation and Analysis Project
 
 Este projeto em Python cria e gerencia um banco de dados relacional utilizando PostgreSQL. Ele inclui scripts para definir o esquema do banco de dados, popular com dados fictícios e realizar análises utilizando consultas SQL. Tudo é coordenado por um único arquivo `main.py`, que deve ser executado para rodar o projeto.
@@ -64,6 +62,8 @@ Este projeto em Python cria e gerencia um banco de dados relacional utilizando P
    ```bash
    python database_setup.py
    ```
+   Este arquivo irá validar a presença de tabelas pré-existentes e, se não houver, criará as tabelas no banco de dados previamente configurado.
+
 
 2. **Popular o Banco de Dados**:
 
@@ -73,7 +73,7 @@ Este projeto em Python cria e gerencia um banco de dados relacional utilizando P
    ```
    Você pode personalizar o número de clientes, produtos e pedidos criados, alterando os parâmetros nas funções `create_customers`, `create_products` e `create_orders`:
 
-   Esses parâmetros podem ser ajustados para simular diferentes cenários, conforme necessidade do usuário.
+   Será verificado se tais tabelas já foram populadas previamente. Se não, será inserido valores conforme necessidade do usuário, pois esses parâmetros podem ser ajustados para simular diferentes cenários.
 
 
 3. **Executar o ETL**:
@@ -82,17 +82,24 @@ Este projeto em Python cria e gerencia um banco de dados relacional utilizando P
    ```bash
    python etl_process.py
    ```
+   Este arquivo gerará consultas SQL e criará novas tabelas no banco de dados, verificando se a tabela já existe e, se não, criará novas tabelas de análise.
+
 
 4. **Rodar todo o pipeline**:
 
-   O script `main.py` executa o processo completo:
-   - Cria o banco de dados e suas tabelas.
-   - Insere dados fictícios.
-   - Executa as consultas SQL e cria as tabelas de análise.
+   Rodar os scripts na seguinte ordem:
+   1. `database_setup.py`
+   2. `database_population.py`
+   3. `etl_process.py` 
 
- 
-   Esses parâmetros podem ser ajustados para simular diferentes cenários.
+   
+   Seguindo essa ordem, o seguinte processo será executado por completo:
+      
+- Cria o banco de dados e suas tabelas.
+- Insere dados fictícios.
+- Executa as consultas SQL e cria as tabelas de análise.
 
+   
 ## Esquema Visual do Banco de Dados
 
 O diagrama abaixo representa o esquema do banco de dados criado:
