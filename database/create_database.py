@@ -6,7 +6,7 @@ Base = declarative_base()
 
 
 class Customers(Base):
-    __tablename__ = 'Customers'
+    __tablename__ = 'customers'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(150), nullable=False)
@@ -18,7 +18,7 @@ class Customers(Base):
 
 
 class Products(Base):
-    __tablename__ = 'Products'
+    __tablename__ = 'products'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(150), nullable=False)
@@ -29,22 +29,22 @@ class Products(Base):
 
 
 class Orders(Base):
-    __tablename__ = 'Orders'
+    __tablename__ = 'orders'
 
     id = Column(Integer, primary_key=True)
-    customer_id = Column(Integer, ForeignKey('Customers.id'))
+    customer_id = Column(Integer, ForeignKey('customers.id'))
     sale_time = Column(DateTime, default=datetime.datetime.utcnow)
 
     customer = relationship("Customers", back_populates="order")
-    order_product = relationship("OrderProduct", back_populates="order")
+    order_product = relationship("OrderProducts", back_populates="order")
 
 
 class OrderProducts(Base):
-    __tablename__ = 'OrderProducts'
+    __tablename__ = 'order_products'
 
     id = Column(Integer, primary_key=True)
-    order_id = Column(Integer, ForeignKey('Orders.id'))
-    product_id = Column(Integer, ForeignKey('Products.id'))
+    order_id = Column(Integer, ForeignKey('orders.id'))
+    product_id = Column(Integer, ForeignKey('products.id'))
     products_count = Column(Integer, nullable=False)
 
     order = relationship("Orders", back_populates="order_product")

@@ -1,6 +1,5 @@
-import db_connection as db
+from database import db_connection as db
 from sqlalchemy import text
-
 
 
 def read_queries(query):
